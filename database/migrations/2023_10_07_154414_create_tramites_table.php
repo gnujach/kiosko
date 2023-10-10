@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('tramites', function (Blueprint $table) {
+            $table->id();
+            $table->uuid('uuid')->index()->unique();
+            $table->string('nombre', 200)->nullable(false);
+            $table->string('objetivo', 200)->nullable(true);
+            $table->string('fundamento_jur', 200)->nullable(true);
+            $table->string('casos')->nullable(true);
+            $table->enum('modalidad', ['virtual', 'semi-presencial', 'presencial'])->nullable(true);
+            $table->unsignedSmallInteger('plazo_respuesta')->nullable(false);
+            $table->decimal('costo', $precision = 8, $scale = 2);
+            $table->enum('tipo_usuario', ['interno', 'externo'])->nullable(false);
+            $table->boolean('activo')->default(true);
+            $table->enum('ser_recibido', ['documento', 'servicio'])->nullable(false);
+            $table->enum('tipo', ['tramite', 'servicio'])->nullable(false);
+            $table->BigInteger('by')->nullable(false);
+            $table->string('url_proceso')->nullable(true);
+            $table->foreignId('departamento_id');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('tramites');
+    }
+};
