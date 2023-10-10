@@ -32,7 +32,7 @@ const props = defineProps({
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <Breadcrumb :items="breadcrumbs" class="w-full" />
                 <div
-                    class="grid grid-flow-row gap-x-2 gap-y-0 bg-white h-screen m-2 rounded-lg items-start content-between min-h-screen space-y-1"
+                    class="grid grid-flow-row gap-x-2 gap-y-0 bg-white h-auto m-2 rounded-lg items-start content-between min-h-screen space-y-1"
                 >
                     <div
                         class="flex justify-start my-4 items-center col-span-2 mb-0"
@@ -54,11 +54,11 @@ const props = defineProps({
                     </div>
 
                     <div
-                        class="flex justify-start col-span-2 ml-4 h-8 mt-2 mb-2 content-normal"
+                        class="flex justify-start col-span-2 ml-4 h-8 mt-8 mb-2 content-normal items-center"
                     >
                         <div>
                             <p
-                                class="font-semibold text-2xl text-blue-900 uppercase"
+                                class="font-semibold text-lg text-blue-900 uppercase italic"
                             >
                                 <span class="text-blue-900">Objetivo:</span>
                                 {{ tramite.data.attributes.objetivo }}
@@ -66,30 +66,34 @@ const props = defineProps({
                         </div>
                     </div>
                     <div
-                        class="grid grid-cols-4 grid-flow-row justify-evenly m-4 gap-4 col-span-2"
+                        class="grid grid-cols-4 grid-flow-row justify-evenly mx-4 gap-4 col-span-2"
                     >
-                        <div class="flex flex-row gap-2">
-                            <p class="font-semibold text-2xl text-blue-900">
+                        <div
+                            class="flex flex-row gap-2 bg-gray-100 rounded-md px-2"
+                        >
+                            <p class="font-semibold text-lg text-blue-900">
                                 Costo:
                             </p>
-                            <p class="font-semibold text-2xl text-blue-900">
+                            <p class="font-semibold text-lg text-blue-900">
                                 ${{ tramite.data.attributes.costo }}
                             </p>
                         </div>
                         <div class="flex flex-row justify-start">
-                            <p class="font-semibold text-2xl text-blue-900">
+                            <p class="font-semibold text-lg text-blue-900">
                                 Tiempo de Respuesta:
                             </p>
-                            <p class="font-semibold text-2xl text-blue-900">
+                            <p class="font-semibold text-lg text-blue-900">
                                 {{ tramite.data.attributes.plazo_respuesta }}
                                 (días)
                             </p>
                         </div>
-                        <div class="flex flex-row m-1 col-span-2">
-                            <p class="font-semibold text-2xl text-blue-900">
+                        <div
+                            class="flex flex-row m-1 col-span-2 bg-gray-100 rounded-md"
+                        >
+                            <p class="font-semibold text-lg text-blue-900">
                                 Departamento:
                             </p>
-                            <p class="font-semibold text-2xl text-blue-900">
+                            <p class="font-semibold text-lg text-blue-900">
                                 {{
                                     tramite.data.departamento.data.attributes
                                         .nombre
@@ -100,41 +104,43 @@ const props = defineProps({
                     <!-- end grid interna 1-->
 
                     <div
-                        class="grid grid-cols-4 grid-flow-row justify-evenly m-4 gap-4 col-span-2"
+                        class="grid grid-cols-4 grid-flow-row justify-evenly m-4 gap-4 col-span-2 gap-2"
                     >
-                        <div class="flex flex-row m-1">
-                            <p class="font-semibold text-2xl text-blue-900">
+                        <div class="flex flex-row m-1 gap-2 justify-start">
+                            <p class="font-semibold text-lg text-blue-900">
                                 Dirigido a Ciudadanos:
                             </p>
-                            <p class="font-semibold text-2xl text-blue-900">
+                            <p class="font-semibold text-lg text-blue-900">
                                 {{ tramite.data.attributes.tipo_usuario }}
                             </p>
                         </div>
-                        <div class="flex flex-row m-1">
-                            <p class="font-semibold text-2xl text-blue-900">
+                        <div
+                            class="flex flex-row m-1 px-2 bg-gray-100 rounded-md"
+                        >
+                            <p class="font-semibold text-lg text-blue-900">
                                 Modalidad:
                             </p>
-                            <p class="font-semibold text-2xl text-blue-900">
+                            <p class="font-semibold text-lg text-blue-900">
                                 {{ tramite.data.attributes.modalidad }}
                             </p>
                         </div>
-                        <div class="flex flex-row m-1">
-                            <p class="font-semibold text-2xl text-blue-900">
+                        <div class="flex flex-row m-2 px-2 gap-2">
+                            <p class="font-semibold text-lg text-blue-900">
                                 Qué recibe el ciudadano:
                             </p>
-                            <p class="font-semibold text-2xl text-blue-900">
+                            <p class="font-semibold text-lg text-blue-900">
                                 {{ tramite.data.attributes.ser_recibido }}
                             </p>
                         </div>
                     </div>
 
                     <div class="flex justify-evenly m-1 col-span-2">
-                        <p class="font-semibold text-2xl text-blue-900">
+                        <p class="font-semibold text-lg text-blue-900">
                             Requisitos:
                         </p>
                         <ul>
                             <li
-                                class="font-semibold text-lg italic uppercase"
+                                class="font-semibold text-lg italic lowercase mx-2 my-2"
                                 v-for="requisito in tramite.data.requisitos
                                     .requisitos"
                                 :key="tramite.data.id"

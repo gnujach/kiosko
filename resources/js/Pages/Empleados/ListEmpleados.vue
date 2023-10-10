@@ -57,12 +57,12 @@ const breadcrumbs = computed(() => {
                                 </p>
                             </div>
                         </div>
-                        <div class="grid grid-cols-3 gap-2 mt-4">
+                        <div class="grid grid-cols-3 gap-1 mt-4">
                             <div class="flex justify-start items-end">
                                 <EnvelopeIcon class="w-8 h-8 text-gray-400" />
                             </div>
                             <p
-                                class="text-gray-500 dark:text-gray-300 italic text-lg group-hover:text-white col-span-2"
+                                class="text-gray-500 dark:text-gray-300 italic text-base group-hover:text-white col-span-2"
                             >
                                 {{ empleado.data.attributes.email }}
                             </p>

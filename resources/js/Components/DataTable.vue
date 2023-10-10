@@ -76,11 +76,14 @@ const filteredTramites = computed(() => {
                 >
                     <div class="flex flex-col">
                         <div
-                            class="flex justify-center items-center h-10 bg-blue-600 text-white font-semibold focus:outline-blue-500 rounded-t-md"
+                            class="flex justify-center items-center py-2 h-12 bg-blue-600 text-white font-semibold focus:outline-blue-500 rounded-t-md"
                         >
-                            {{
-                                tramite.data.departamento.data.attributes.nombre
-                            }}
+                            <p class="capitalize">
+                                {{
+                                    tramite.data.departamento.data.attributes
+                                        .nombre
+                                }}
+                            </p>
                         </div>
                         <div
                             class="flex flex-col sm:-mx-4 sm:flex-row justify-evenly mt-2"
