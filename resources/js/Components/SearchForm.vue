@@ -14,6 +14,7 @@ const search = (e) => {
                     placeholder="buscar"
                     @input="search"
                     size="24"
+                    inputmode="text"
                     class="bg-gray-50 border border-gray-300 text-gray-900 active:border-blue-400 rounded-lg"
                 />
             </div>
