@@ -4,6 +4,7 @@ import DataTable from "@/Components/DataTable.vue";
 import { Head, Link } from "@inertiajs/vue3";
 import { EnvelopeIcon, DevicePhoneMobileIcon } from "@heroicons/vue/24/solid";
 import { ref, computed } from "vue";
+
 const props = defineProps({
     tramites: Object,
     departamentos: Object,

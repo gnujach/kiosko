@@ -18,7 +18,7 @@ watch(departamento, () => {
 </script>
 
 <template>
-    <div class="py-3 px-4 flex items-center w-1/2 flex-wrap justify-center">
+    <div class="py-3 px-4 flex items-start w-1/2 flex-wrap justify-center">
         <p class="m-1 text-lg font-semibold">Departamento</p>
         <BaseListbox
             class="w-full"

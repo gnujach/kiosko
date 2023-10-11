@@ -43,7 +43,7 @@ const filteredTramites = computed(() => {
 </script>
 <template>
     <div class="bg-white relative border rounded-lg">
-        <div class="flex md:flex-col lg:flex-row items-center justify-between">
+        <div class="flex md:flex-col lg:flex-row items-start justify-between">
             <!-- Search bar-->
             <SearchForm @search="handleSearch" />
 
