@@ -7,7 +7,6 @@ const search = (e) => {
 const inputTramite = ref("");
 const showKeyboard = ref(false);
 import SimpleKeyboard from "@/Components/SimpleKeyBoard.vue";
-import "simple-keyboard/build/css/index.css";
 const onChange = (input) => {
     inputTramite.value = input;
 };
