@@ -39,7 +39,6 @@ const props = defineProps({
                     >
                         <div>
                             <vue-qrcode
-                                value="https://www.open-link.net"
                                 :value="tramite.data.attributes.url_proceso"
                                 @change="onDataUrlChange"
                                 color="{light: '#231243', dark:'#f12fefff'}"
