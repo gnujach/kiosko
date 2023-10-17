@@ -1,18 +1,35 @@
 <script setup>
 import { Head, Link } from "@inertiajs/vue3";
 import HeaderLayout from "@/Components/Header.vue";
+import ConfirmationModal from "@/Components/ConfirmationModal.vue";
+import DialogModal from "@/Components/DialogModalIframe.vue";
+import DangerButton from "@/Components/DangerButton.vue";
 import {
     UserGroupIcon,
     CheckIcon,
     DocumentTextIcon,
     ArrowRightIcon,
 } from "@heroicons/vue/24/solid";
+import { ref } from "vue";
+
 defineProps({
     // canLogin: Boolean,
     canRegister: Boolean,
     laravelVersion: String,
     phpVersion: String,
 });
+const urlEncuesta = ref(
+    "https://encuestas.strc.guanajuato.gob.mx/#/enc/dac2b5bd-4b20-ff88-14bb-b2063669210c/bdec9998-2189-de78-4ee6-adb113a83ced"
+);
+const urlFormulario = ref(
+    "https://forms.office.com/r/P0mLc9aHTx?origin=lprLink"
+);
+const confirmingOpen = ref(false);
+const closeModal = () => (confirmingOpen.value = false);
+const openModal = () => (confirmingOpen.value = true);
+const confirmingOpenFormulario = ref(false);
+const closeModalFormulario = () => (confirmingOpenFormulario.value = false);
+const openModalFormulario = () => (confirmingOpenFormulario.value = true);
 </script>
 
 <template>
@@ -92,8 +109,8 @@ defineProps({
                         </div>
                     </Link>
 
-                    <a
-                        href="https://encuestas.strc.guanajuato.gob.mx/#/enc/dac2b5bd-4b20-ff88-14bb-b2063669210c/bdec9998-2189-de78-4ee6-adb113a83ced"
+                    <button
+                        @click="openModal"
                         target="”_blank”"
                         class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-blue-500"
                     >
@@ -139,9 +156,10 @@ defineProps({
                                 encuesta.
                             </p>
                         </div>
-                    </a>
-                    <a
-                        href="https://encuestas.strc.guanajuato.gob.mx/#/enc/dac2b5bd-4b20-ff88-14bb-b2063669210c/bdec9998-2189-de78-4ee6-adb113a83ced"
+                    </button>
+                    <button
+                        @click="openModalFormulario"
+                        href=""
                         target="”_blank”"
                         class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-blue-500"
                     >
@@ -190,7 +208,7 @@ defineProps({
                                 información es anónima.}
                             </p>
                         </div>
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -205,6 +223,42 @@ defineProps({
             </div>
         </div>
     </div>
+    <DialogModal
+        :show="confirmingOpen"
+        @close="confirmingOpen = false"
+        :urlIFrame="urlEncuesta"
+    >
+        <template #title> Responder Encuesta </template>
+
+        <template #content>
+            Are you sure you want to delete your account? Once your account is
+            deleted, all of its resources and data will be permanently deleted.
+        </template>
+
+        <template #footer>
+            <DangerButton class="ml-2" @click="closeModal"
+                >Cerrar Encuesta
+            </DangerButton>
+        </template>
+    </DialogModal>
+    <DialogModal
+        :show="confirmingOpenFormulario"
+        @close="confirmingOpenFormulario = false"
+        :urlIFrame="urlFormulario"
+    >
+        <template #title> Responder Encuesta </template>
+
+        <template #content>
+            Are you sure you want to delete your account? Once your account is
+            deleted, all of its resources and data will be permanently deleted.
+        </template>
+
+        <template #footer>
+            <DangerButton class="ml-2" @click="closeModalFormulario"
+                >Cerrar Encuesta
+            </DangerButton>
+        </template>
+    </DialogModal>
 </template>
 
 <style>
