@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-c27b6911.js";import{o as e,e as s}from"./app-85926c39.js";const c={},t={src:"/assets/img/logo_seg.png"};function r(n,_){return e(),s("img",t)}const m=o(c,[["render",r]]);export{m as A};
