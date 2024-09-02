@@ -25,6 +25,20 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 })->name('home');
+Route::get('/tutoriales', function () {
+    return Inertia::render('Tutoriales', []);
+})->name('tutoriales');
+Route::get('/videos/constancia', function () {
+    return Inertia::render('Videos/Constancia', []);
+})->name('videos/constancia');
+Route::get('/videos/certificado', function () {
+    return Inertia::render('Videos/Certificado', []);
+})->name('videos/certificado');
+
+
+
+
+
 Route::get('/team', function () {
     return Inertia::render('Team');
 });
