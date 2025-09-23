@@ -22,7 +22,7 @@ defineProps({
     phpVersion: String,
 });
 const urlEncuesta = ref(
-    "https://encuestas.strc.guanajuato.gob.mx/#/enc/dac2b5bd-4b20-ff88-14bb-b2063669210c/bdec9998-2189-de78-4ee6-adb113a83ced"
+    "https://encuestas.sh.guanajuato.gob.mx/#/enc/f5bbd3c7-745e-b95e-5980-8a8a93468aa1/76e6da24-30be-04b8-72eb-7a09bf7a3ecb"
 );
 const urlFormulario = ref(
     "https://forms.office.com/r/4JYzyCTnaY"

@@ -84,6 +84,46 @@ const openModalFormulario = () => (confirmingOpenFormulario.value = true);
                         <ArrowRightIcon class="h-8 w-8 text-blue-500"></ArrowRightIcon>
                     </div>
                     </Link>
+                    <Link :href="route('videos/talones')"
+                        class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-blue-500">
+                    <div class="w-full">
+                        <div
+                            class="h-16 w-16 bg-blue-50 dark:bg-blue-800/20 flex items-center justify-center rounded-full">
+                            <DocumentTextIcon class="w-8 h-8 text-blue-500/80" />
+                        </div>
+
+                        <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                            Descargar Comprobante de Pago
+                        </h2>
+
+                        <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                            Conoce como puedes descargar un comprobante de pago
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <ArrowRightIcon class="h-8 w-8 text-blue-500"></ArrowRightIcon>
+                    </div>
+                    </Link>
+                    <Link :href="route('videos/certificado')"
+                        class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-blue-500">
+                    <div class="w-full">
+                        <div
+                            class="h-16 w-16 bg-blue-50 dark:bg-blue-800/20 flex items-center justify-center rounded-full">
+                            <DocumentTextIcon class="w-8 h-8 text-blue-500/80" />
+                        </div>
+
+                        <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                           Constancia de Servicio
+                        </h2>
+
+                        <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                            Conoce como puedes tramitar tu constancia de servicio
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <ArrowRightIcon class="h-8 w-8 text-blue-500"></ArrowRightIcon>
+                    </div>
+                    </Link>
 
 
 
