@@ -37,6 +37,9 @@ Route::get('/videos/certificado', function () {
 Route::get('/videos/talones', function () {
     return Inertia::render('Videos/Talones', []);
 })->name('videos/talones');
+Route::get('/videos/constanciadocente', function () {
+    return Inertia::render('Videos/ConstanciaDocente', []);
+})->name('videos/constanciadocente');
 Route::get('/tramites/triptico', function () {
     return Inertia::render('Tramites/Triptico', []);
 })->name('/tramites/triptico');

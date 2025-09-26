@@ -37,7 +37,7 @@ const props = defineProps({
                     <div class="flex justify-start my-4 items-center col-span-2 mb-0">
                         <div>
                             <vue-qrcode
-                                value="https://seggtogob-my.sharepoint.com/:b:/g/personal/j_abarca_seg_guanajuato_gob_mx/ETOqvUmXqTVHrChdPho9IeYB0rTxuySbVRI0btnWLZ12fw?e=CrlpV2"
+                                value="https://seggtogob-my.sharepoint.com/:b:/g/personal/j_abarca_seg_guanajuato_gob_mx/ETxVHoePMjJOmmQaIspEeDYB83cINQTmKZ9IiHcj-EBeEw?e=ylP4WW"
                                 @change="onDataUrlChange" color="{light: '#231243', dark:'#f12fefff'}" scale="6" />
                         </div>
                         <h2 class="text-3xl font-bold uppercase text-blue-700 mb-2">
